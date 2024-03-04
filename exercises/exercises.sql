@@ -25,4 +25,19 @@ SELECT name,
 		WHEN monthlymaintenance > 100 THEN 'expensive'
 		ELSE 'cheap'
 	END AS cost
-FROM cd.facilities
+FROM cd.facilities;
+
+-- Exercise 8: Working with dates
+SELECT memid, surname, firstname, joindate FROM cd.members WHERE joindate >= '2012-09-01';
+
+-- Exercise 9: Removing duplicates, and ordering results
+SELECT DISTINCT surname FROM cd.members ORDER BY surname LIMIT 10;
+
+-- Exercise 10: Combining results from multiple queries
+SELECT surname FROM cd.members UNION SELECT name FROM cd.facilities;
+
+-- Exercise 11: Simple aggregation
+SELECT MAX(joindate) as latest FROM cd.members;
+
+-- Exercise 12: More aggregation
+SELECT firstname, surname, joindate FROM cd.members WHERE joindate = (SELECT MAX(joindate) FROM cd.members);
