@@ -35,10 +35,31 @@ ORDER BY
 
 -- Exercise 4: Produce a list of all members, along with their recommender
 SELECT
-	firstname as memfname,
-	surname as memsname,
-	recommendedby
+	m1.firstname AS memfname,
+	m1.surname AS memsname,
+	m2.firstname AS recfname,
+	m2.surname AS recsname
 FROM 
-	cd.members
-order by surname, firstname;
+	cd.members AS m1
+LEFT JOIN 
+	cd.members AS m2
+ON 
+	m1.recommendedby = m2.memid
+ORDER BY 
+	m1.surname, m1.firstname;
+
+-- Exercise 5: Produce a list of all members who have used a tennis court
+SELECT DISTINCT
+    members.firstname || ' ' || members.surname AS member,
+    facilities.name AS facility
+FROM 
+    cd.facilities
+INNER JOIN
+    cd.bookings AS bookings ON facilities.facid = bookings.facid
+INNER JOIN
+    cd.members AS members ON bookings.memid = members.memid
+WHERE 
+    facilities.name LIKE 'Tennis Court%'
+ORDER BY 
+	member, facility;
 
