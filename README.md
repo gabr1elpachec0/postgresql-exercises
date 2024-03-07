@@ -13,5 +13,6 @@
 - ``STRING (LPAD, LIKE, ILIKE)``
 - ``RECURSIVE``
 
-`` 🚧 NOT FINISHED YET 🚧`` 
-
+<p align=center>
+  🚧 NOT FINISHED YET 🚧
+</p>
