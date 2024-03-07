@@ -2,6 +2,6 @@
   Resolution of PostgreSQL Exercises
 </h1>
 
-<h2>
-  ``🚧 NOT FINISHED YET 🚧`` 
-</h2>
+<P>
+  ``NOT FINISHED YET`` 
+</P>
