@@ -12,7 +12,3 @@
 - ``DATE (EXTRACT, TIMESTAMP)``
 - ``STRING (LPAD, LIKE, ILIKE)``
 - ``RECURSIVE (WITH RECURSIVE, UNION ALL)``
-
-<p align=center>
-  🚧 NOT FINISHED YET 🚧
-</p>
